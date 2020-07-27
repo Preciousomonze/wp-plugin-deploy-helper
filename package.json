@@ -1,0 +1,20 @@
+{
+	"title": "WordPress Plugin Deploy Helper",
+	"name": "wp-plugin-deploy-helper",
+	"version": "1.0.0",
+	"description": "File to easily zip all files and folders to be ready for plugin install. Also for extraction to wordpress-org folder for auto deploy :)",
+	"license": "GPL-3.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Preciousomonze/wp-plugin-deploy-helper"
+	},
+	"bugs": {
+		"url": "https://github.com/Preciousomonze/wp-plugin-deploy-helper/issues"
+	},
+	"author": "Preciousomonze",
+	"scripts": {
+		"compress-zip": "php zipper_file.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=zipper_file.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore",
+		"offload-zip": "php zipper_file.php --plugin_name=woo-phone-validator --offload=true",
+		"deploy": "npm run compress-zip && npm run offload-zip"
+	}
+}

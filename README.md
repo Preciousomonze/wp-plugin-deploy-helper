@@ -1,5 +1,5 @@
 # WordPress Plugin Deploy Helper 🤾🏽‍♂️🚀
-Helps to easily zip all files and folders to be ready for plugin install
+Helps to easily zip all files and folders to be ready for plugin install, the WordPress way.
 
 Also for extraction to wordpress-org folder for auto deploy :), don't get?
 https://github.com/10up/action-wordpress-plugin-deploy for more info.
@@ -21,12 +21,20 @@ So basically, I was kind of tired when coding this, so it doesn't follow standar
 This requires **PHP** `>= 5.6` I know it's an obvious requirement 🤡.
 
 #### Suggestions
-You might enjoy this more using `npm package` installer, it's what i used to easily execute my cmd, you'll see a sample json in the repo. 
+You might enjoy this more using `npm package` installer, it's what i used to easily execute my cmd. e.g `npm run compress-zip`, you'll see a sample json in the repo.
+
+Putting it in a `bash script` won't be bad also, whichever works for you.
 
 ### Command line usage
 
-`php zipper_file.php --param1=values --param2=value1,value2`
+` php zipper_file.php --param1=values --param2=value1,value2 `
 
 It takes in parameters via the **Command Line Interface(CLI)**
 
 ### Command Line Parameters
+Command line options
+
+    -h, --help                  Print usage information.
+                                `--help options` for details on available options.
+    -V, --version               Print version number.
+    -p, --parse <options>       Specify parser options:

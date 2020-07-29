@@ -47,11 +47,33 @@ Command line options
     --offload_dir                  (optional) if not set, defaults extracting to .wordpress-org folder, only useful if -offload param is set.
     
 ### Sample Usage
-#### Compressing
+#### Compressing your Plugin Folder to a zip file 🗜️
     `php zipper_file.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=zipper_file.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore`
- 
- #### Offloading/Extracting
+
+#### Offloading/Extracting the zipped file 🚛📦
+ Notice the option field `--offload_dir` param is not called, it defaults extraction to `.wordpress-org/` folder. 
+ Add the `--offload_dir=[folder_name]` arg if you want to override the default folder.
     `php zipper_file.php --plugin_name=woo-phone-validator --offload=true`
  
  ### Finishing Note 📝
-    if
+If you find this useful:
+
+    Do not forget to star 🤩✨⭐ the Repo and share.
+
+Else if you want to buy me pancakes 🥞:
+
+    You can click the **Donate link** above 😘😉.
+    
+Else if you want to collaborate:
+
+    Feel free to join.
+    
+Else
+
+    Thanks for using and hanging around 👀.
+    
+
+##### Wanna chat with me? 👀
+ Feel free to check my profile to reach me on any means you can.
+ 
+ ##### Stay safe and have a nice time! Remember to try out Pancakes today! 💪🏼🥞

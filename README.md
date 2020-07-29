@@ -34,7 +34,11 @@ It takes in parameters via the **Command Line Interface(CLI)**
 ### Command Line Parameters
 Command line options
 
-    -h, --help                  Print usage information.
-                                `--help options` for details on available options.
-    -V, --version               Print version number.
-    -p, --parse <options>       Specify parser options:
+    --plugin_name                  The Name of your plugin, should be the same with your unique slug
+    --ignore_file_path             (optional) csv format of paths/files to ignore, if not called, there are default paths to be ignored by the script 
+    --delete_files_in_zip          (optional) csv format of paths/files to delete in the zip(it also searches for matches, so git will ignore github,etc). 
+                                   This was added cause i felt, adding all to ignore wont be as fast as deleting from the zip file, note: it doesn't delete folers                 
+    --offload                      (optional) if set, the file will only extract the {plugin_name}.zip file to .wordpress-org folder, any value is true.               
+    --offload_dir                  (optional) if not set, defaults extracting to .wordpress-org folder, only useful if -offload param is set.
+    
+### Sample Usage

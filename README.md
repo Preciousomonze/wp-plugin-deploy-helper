@@ -55,7 +55,7 @@ Command line options
 #### Compressing your Plugin Folder to a zip file 🗜️
     `php zipper_file.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=zipper_file.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore`
     
-    ![image](https://user-images.githubusercontent.com/15174834/88745375-ca940880-d141-11ea-86f1-154055b04ec6.jpeg)
+   ![image](https://user-images.githubusercontent.com/15174834/88745375-ca940880-d141-11ea-86f1-154055b04ec6.jpeg)
 
 
 #### Offloading/Extracting the zipped file 🚛📦
@@ -65,7 +65,7 @@ Command line options
 
  `php zipper_file.php --plugin_name=woo-phone-validator --offload=true`
 
-    ![image](https://user-images.githubusercontent.com/15174834/88745386-d089e980-d141-11ea-8bb9-5ad6fa62ac4a.jpeg)
+   ![image](https://user-images.githubusercontent.com/15174834/88745386-d089e980-d141-11ea-8bb9-5ad6fa62ac4a.jpeg)
 
 ### Finishing Note 📝
 If you find this useful:

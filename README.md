@@ -16,20 +16,24 @@ Also try to make your code sniffer ignore this file, e get why(There's a reason)
 
 So basically, I was kind of tired when coding this, so it doesn't follow standards to the core, but you'll be fine, still good enough fam.
 
+
 ### Installation
 #### Requirements
 This requires **PHP** `>= 5.6` I know it's an obvious requirement 🤡.
+
 
 #### Suggestions
 You might enjoy this more using `npm package` installer, it's what i used to easily execute my cmd. e.g `npm run compress-zip`, you'll see a sample json in the repo.
 
 Putting it in a `bash script` won't be bad also, whichever works for you.
 
+
 ### Command line usage
 
 ` php zipper_file.php --param1=values --param2=value1,value2 `
 
 It takes in parameters via the **Command Line Interface(CLI)**
+
 
 ### Command Line Parameters
 Command line options
@@ -46,16 +50,20 @@ Command line options
     
     --offload_dir                  (optional) if not set, defaults extracting to .wordpress-org folder, only useful if -offload param is set.
     
+
 ### Sample Usage
 #### Compressing your Plugin Folder to a zip file 🗜️
     `php zipper_file.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=zipper_file.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore`
 
 #### Offloading/Extracting the zipped file 🚛📦
  Notice the option field `--offload_dir` param is not called, it defaults extraction to `.wordpress-org/` folder. 
+
  Add the `--offload_dir=[folder_name]` arg if you want to override the default folder.
-    `php zipper_file.php --plugin_name=woo-phone-validator --offload=true`
+
+ `php zipper_file.php --plugin_name=woo-phone-validator --offload=true`
  
- ### Finishing Note 📝
+
+### Finishing Note 📝
 If you find this useful:
 
     Do not forget to star 🤩✨⭐ the Repo and share.
@@ -73,7 +81,7 @@ Else
     Thanks for using and hanging around 👀.
     
 
-##### Wanna chat with me? 👀
+### Wanna chat with me? 👀
  Feel free to check my profile to reach me on any means you can.
  
- ##### Stay safe and have a nice time! Remember to try out Pancakes today! 💪🏼🥞
+#### Stay safe and have a nice time! Remember to try out Pancakes today! 💪🏼🥞

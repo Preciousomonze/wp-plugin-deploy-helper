@@ -33,7 +33,7 @@ $offload_param = ( isset($offload_param['offload']) ? true : null );
 $offload_dir_param = ( isset($offload_dir_param['offload_dir']) ? trim($offload_dir_param['offload_dir']) : null );
 
 // Ref note
-$ref_note = "Please do not forget to star the repo of this program here:";
+$ref_note = "Please do not forget to star the repo of this program here: https://github.com/Preciousomonze/wp-plugin-deploy-helper";
 
 ## Start work!
 

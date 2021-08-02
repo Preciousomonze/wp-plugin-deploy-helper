@@ -19,7 +19,7 @@ So basically, I was kind of tired when coding this, so it doesn't follow standar
 
 ### Installation
 #### Requirements
-This requires **PHP** `>= 5.6` I know it's an obvious requirement 🤡.
+This requires **PHP** `>= 5.6` (I know it's an obvious requirement 🤡) and the `ZipArchive` 🤐 extension.
 
 
 #### Suggestions

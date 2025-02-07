@@ -1,20 +1,22 @@
 {
-	"title": "WordPress Plugin Deploy Helper",
-	"name": "wp-plugin-deploy-helper",
+	"title": "CodeXplorer WordPress Plugin Deploy Helper",
+	"name": "cx-wp-plugin-deploy-helper",
 	"version": "1.0.0",
 	"description": "File to easily zip all files and folders to be ready for plugin install. Also for extraction to wordpress-org folder(or any folder of your choice) for auto deploy :)",
 	"license": "GPL-3.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Preciousomonze/wp-plugin-deploy-helper"
+		"url": "https://github.com/Preciousomonze/cx-wp-plugin-deploy-helper"
 	},
 	"bugs": {
-		"url": "https://github.com/Preciousomonze/wp-plugin-deploy-helper/issues"
+		"url": "https://github.com/Preciousomonze/cx-wp-plugin-deploy-helper/issues"
 	},
 	"author": "Preciousomonze",
 	"scripts": {
-		"compress-zip": "php wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=wp-plugin-deploy-helper.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore",
-		"offload-zip": "php wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --offload=true",
-		"deploy": "npm run compress-zip && npm run offload-zip"
+		"compress-zip": "php cx-wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=wp-plugin-deploy-helper.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore",
+		"offload-zip": "php cx-wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --offload=true",
+		"delete-zip": "sh compress-zip-offload.sh -dz",
+		"deploy": "npm run compress-zip && npm run offload-zip",
+		"deploy-ignore-zip": "npm run compress-zip && npm run offload-zip && npm run delete-zip"
 	}
 }

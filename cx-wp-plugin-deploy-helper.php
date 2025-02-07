@@ -18,22 +18,24 @@
  * @contributors add names here
  */
 
-// Get Params
-$plugin_name = getopt(null, ['plugin_name:']);
-$ignore_param = getopt(null, ['ignore_file_path:']);
-$del_files_in_zip = getopt(null, ['delete_files_in_zip:']);
-$offload_param = getopt(null, ['offload:']);
-$offload_dir_param = getopt(null, ['offload_dir:']);
+// Get Params.
+$plugin_name = getopt('', ['plugin_name:']);
+$ignore_param = getopt('', ['ignore_file_path:']);
+$del_files_in_zip = getopt('', ['delete_files_in_zip:']);
+$del_zip = getopt('', ['delete_zip:']);
+$offload_param = getopt('', ['offload:']);
+$offload_dir_param = getopt('', ['offload_dir:']);
 
 // Repackage.
 $plugin_name = ( isset($plugin_name['plugin_name']) ? trim($plugin_name['plugin_name']) : null );
 $ignore_file_path = ( isset($ignore_param['ignore_file_path']) ? trim($ignore_param['ignore_file_path']) : null );
 $del_files_in_zip = ( isset($del_files_in_zip['delete_files_in_zip']) ? trim($del_files_in_zip['delete_files_in_zip']) : null );
+$del_zip = ( isset($del_zip['delete_zip']) ? true : null );
 $offload_param = ( isset($offload_param['offload']) ? true : null );
 $offload_dir_param = ( isset($offload_dir_param['offload_dir']) ? trim($offload_dir_param['offload_dir']) : null );
 
-// Ref note
-$ref_note = "Please do not forget to star the repo of this program here: https://github.com/Preciousomonze/wp-plugin-deploy-helper";
+// Ref note.
+$ref_note = "Please do not forget to star the repo of this program here: https://github.com/Preciousomonze/cx-wp-plugin-deploy-helper";
 
 ## Start work!
 
@@ -41,11 +43,20 @@ if ( empty($plugin_name) ) {
 	exit('-plugin_name param required! 😒');
 }
 //exit;
-// Get real path for our folder
+// Get real path for our folder.
 $root_path = realpath(__DIR__);
 $folder_path = $plugin_name.'/';
 
 #################################################################
+
+// Are we to delete zip file?
+if ($del_zip) {
+	echo "deleting zip file:[" . $plugin_name . ".zip] ... 🚦🤓\n";
+	echo ( unlink($plugin_name.'.zip') == true ? "\nDone deleting.\n" : "\nCould not delete zip file.\n" . "\n" ); 
+	exit;
+}
+
+##############################################################
 // Initialize archive object
 $zip = new SubDir_ZipArchive();
 
@@ -70,12 +81,12 @@ if ( $offload_param ) {
 	
 		$zip->close();
 	}
-	else{
+	else {
 		echo 'OMO! failed to open zip file. ⚠️😢';
 	}
 	exit;
 }
-###########
+###############################################################################################
 
 // First delete incase theres an old zip file.
 echo "trying to Delete [" .$plugin_name . ".zip] if any... 🚦🤓\n";
@@ -137,6 +148,7 @@ foreach ( $files as $name => $file ){
         $zip->addFile($file_path, $relative_path);
     }
 }
+
 // Zip archive will be created only after closing object
 $zip->close();
 echo "zipped! 😎\n";
@@ -150,20 +162,20 @@ if ( !empty($del_files_in_zip) ) {
 		for($i = 0; $i < count($files_to_delete); $i++){
 			$file = trim($files_to_delete[$i]);
 			if( !empty($file) ){
-				echo "Deleting: " . $file . "...\nDeleted:";
-				var_dump( $zip->deleteName($folder_path.$file) ); // Delete this current file.
+				echo "Deleting: " . $file . "...\nDeleted: ";
+				echo ( $zip->deleteName($folder_path.$file) ? "Yes!" : "No") . "\n"; // Delete this current file.
 			}
 		}
 		$zip->close();
 		echo "\nNecessary stuff deleted. 😎";
 	}
-	else{
+	else {
 		echo "OMO! Couldn't delete necessary stuff because file couldn't be opened.  ⚠️😢";
 	}
 }
 
 echo "\n\nIf your zipping and stuff were successful, congratss!!, else, check around, something must be up, you will surely solve it, Mafo! 💪😊.
- \nIf you are using github action to deploy your WordPress Plugin, do not forget to -offload!
+ \nIf you are using github action to deploy your WordPress Plugin, do not forget to --offload!
  \nBe like CodeXplorer 🤾🏽‍♂️🥞🦜🤡, and " . $ref_note;
 
 /**

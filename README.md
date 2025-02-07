@@ -30,7 +30,7 @@ Putting it in a `bash script` won't be bad also, whichever works for you.
 
 ### Command line usage
 
-` php wp-plugin-deploy-helper.php --param1=values --param2=value1,value2 `
+` php cx-wp-plugin-deploy-helper.php --param1=values --param2=value1,value2 `
 
 It takes in parameters via the **Command Line Interface(CLI)**
 
@@ -44,7 +44,7 @@ Command line options
     
     --delete_files_in_zip          (optional) csv format of paths/files to delete in the zip(it also searches for matches, so git will ignore github,etc). 
                                    
-                                   This was added cause i felt, adding all to ignore wont be as fast as deleting from the zip file.
+                                   This was added cause I felt, that adding all to ignore won't be as fast as deleting from the zip file.
                                    
                                    note: **It doesn't delete folders for some weird reason.
     
@@ -52,10 +52,12 @@ Command line options
     
     --offload_dir                  (optional) if not set, defaults extracting to .wordpress-org folder, only useful if -offload param is set.
     
+    --delete_zip                   (optional) if set, deletes the zip file.
+    
 
 ### Sample Usage
 #### Compressing your Plugin Folder to a zip file 🗜️
-    `php wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=wp-plugin-deploy-helper.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore`
+    `php cx-wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.sh --delete_files_in_zip=wp-plugin-deploy-helper.php,README.md,package-lock.json,composer.lock,.eslintrc.json,.distignore`
     
    ![image](https://user-images.githubusercontent.com/15174834/88745375-ca940880-d141-11ea-86f1-154055b04ec6.jpeg)
 
@@ -65,9 +67,13 @@ Command line options
 
  Add the `--offload_dir=[folder_name]` arg if you want to override the default folder.
 
- `php wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --offload=true`
+ `php cx-wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --offload=true`
 
    ![image](https://user-images.githubusercontent.com/15174834/88745386-d089e980-d141-11ea-8bb9-5ad6fa62ac4a.jpeg)
+
+#### Deleting the zipped file ❌
+ `php cx-wp-plugin-deploy-helper.php --plugin_name=woo-phone-validator --delete_zip=true`
+
 
 ### Finishing Note 📝
 If you find this useful:
@@ -88,6 +94,6 @@ Else
     
 
 ### Wanna chat with me? 👀
- Feel free to check my profile to reach me on any means you can.
+ Feel free to check my profile to reach me by any means you can.
  
 #### Stay safe and have a nice time! Remember to try out Pancakes today! 💪🏼🥞
